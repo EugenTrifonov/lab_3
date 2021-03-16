@@ -24,7 +24,7 @@ for gpu in gpus:
 
 
 LOG_DIR = 'logs'
-BATCH_SIZE = 32
+BATCH_SIZE = 16
 NUM_CLASSES = 20
 RESIZE_TO = 224
 TRAIN_SIZE = 12786
@@ -75,8 +75,7 @@ def main():
   train_size = int(TRAIN_SIZE * 0.7 / BATCH_SIZE)
   train_dataset = dataset.take(train_size)
   validation_dataset = dataset.skip(train_size)
-  for x,y in dataset.take(1):
-      print(x)
+
   model = build_model()
   
   model.compile(
