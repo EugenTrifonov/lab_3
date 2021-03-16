@@ -78,7 +78,7 @@ def main():
 
   model = build_model()
   for x,y in dataset.take(1):
-    ptrint(x)
+    print(x)
   model.compile(
     optimizer=tf.optimizers.Adam(lr=0.001),
     loss=tf.keras.losses.categorical_crossentropy,
