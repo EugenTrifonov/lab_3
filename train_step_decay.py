@@ -66,7 +66,7 @@ def build_model():
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 def step_decay(epoch):
    initial_lrate = 0.1
-   drop = 0.35
+   drop = 0.6
    epochs_drop = 5.0
    lrate = initial_lrate * math.pow(drop,  
            math.floor((1+epoch)/epochs_drop))
