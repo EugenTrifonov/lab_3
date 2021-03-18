@@ -77,10 +77,8 @@ def main():
   validation_dataset = dataset.skip(train_size)
 
   model = build_model()
-  for x,y in dataset.take(1):
-    print(x)
   model.compile(
-    optimizer=tf.optimizers.Adam(lr=0.0001),
+    optimizer=tf.optimizers.Adam(lr=0.01),
     loss=tf.keras.losses.categorical_crossentropy,
     metrics=[tf.keras.metrics.categorical_accuracy],
   )
