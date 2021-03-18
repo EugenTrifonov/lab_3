@@ -71,7 +71,7 @@ def step_decay(epoch):
    lrate = initial_lrate * math.pow(drop,  
            math.floor((1+epoch)/epochs_drop))
    return lrate
-lrate = LearningRateScheduler(step_decay)
+
 
 def main():
   args = argparse.ArgumentParser()
@@ -85,18 +85,19 @@ def main():
 
   model = build_model()
   model.compile(
-    optimizer=tf.optimizers.Adam(lr=0.1),
+    optimizer=tf.optimizers.Adam(),
     loss=tf.keras.losses.categorical_crossentropy,
     metrics=[tf.keras.metrics.categorical_accuracy],
   )
 
   log_dir='{}/owl-{}'.format(LOG_DIR, time.time())
+  lrate = LearningRateScheduler(step_decay)
   model.fit(
     train_dataset,
     epochs=50,
     validation_data=validation_dataset,
     callbacks=[
-      tf.keras.callbacks.TensorBoard(log_dir),
+      tf.keras.callbacks.TensorBoard(log_dir),lrate
     ]
   )
 
