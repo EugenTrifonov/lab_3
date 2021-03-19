@@ -64,14 +64,12 @@ def build_model():
   x = tf.keras.layers.GlobalAveragePooling2D()(model.output)
   outputs = tf.keras.layers.Dense(NUM_CLASSES,activation=tf.keras.activations.softmax)(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
-def step_decay(epoch):
+def exp_decay(epoch):
    initial_lrate = 0.1
-   drop = 0.5
-   epochs_drop = 10.0
-   lrate = initial_lrate * math.pow(drop,  
-           math.floor((1+epoch)/epochs_drop))
+   k = 0.1
+   lrate = initial_lrate * exp(-k*t)
    return lrate
-lrate = LearningRateScheduler(step_decay)
+lrate = LearningRateScheduler(exp_decay)
 
 def main():
   args = argparse.ArgumentParser()
@@ -85,7 +83,7 @@ def main():
 
   model = build_model()
   model.compile(
-    optimizer=tf.optimizers.Adam(lr=0.1),
+    optimizer=tf.optimizers.Adam(),
     loss=tf.keras.losses.categorical_crossentropy,
     metrics=[tf.keras.metrics.categorical_accuracy],
   )
@@ -96,7 +94,7 @@ def main():
     epochs=50,
     validation_data=validation_dataset,
     callbacks=[
-      tf.keras.callbacks.TensorBoard(log_dir),
+      tf.keras.callbacks.TensorBoard(log_dir),lrate
     ]
   )
 
