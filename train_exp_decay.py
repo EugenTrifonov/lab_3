@@ -5,7 +5,7 @@ to classify X-Ray chest images as a lab example for BSU students.
 __author__ = 'Alexander Soroka, soroka.a.m@gmail.com'
 __copyright__ = """Copyright 2020 Alexander Soroka"""
 
-import math.exp
+from math import exp
 import argparse
 import glob
 import numpy as np
