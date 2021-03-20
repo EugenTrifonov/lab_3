@@ -20,12 +20,15 @@
  1)initial_lrate = 0.1
    drop = 0.4
    epochs_drop = 3.0
+   
  2)initial_lrate = 0.1
    drop = 0.4
    epochs_drop = 3.0
+   
  3)initial_lrate = 0.1
    drop = 0.4
    epochs_drop = 3.0
+   
 ![leg_1](https://user-images.githubusercontent.com/80068414/111865770-02beb480-897a-11eb-8821-2c1f778f9fff.png)
 
 Метрика качества на валидации
