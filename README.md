@@ -21,15 +21,15 @@
  
  1)initial_lrate = 0.1
    drop = 0.3
-   epochs_drop = 5.0
+   epochs_drop = 5.0 (синий график)
    
  2)initial_lrate = 0.1
    drop = 0.5
-   epochs_drop = 10.0
+   epochs_drop = 10.0 (красный график)
    
  3)initial_lrate = 0.1
    drop = 0.4
-   epochs_drop = 3.0
+   epochs_drop = 3.0 (голубой график)
    
 ![leg_1](https://user-images.githubusercontent.com/80068414/111865770-02beb480-897a-11eb-8821-2c1f778f9fff.png)
 
