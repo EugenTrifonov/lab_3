@@ -17,6 +17,15 @@
 ## A)Пошаговое затухание (Step Decay)
 Файл train_step_decay.py
 
+![leg_1](https://user-images.githubusercontent.com/80068414/111865770-02beb480-897a-11eb-8821-2c1f778f9fff.png)
+
+Метрика качества на валидации
+
+https://github.com/EugenTrifonov/lab_3/blob/main/graph/epoch_categorical_accuracy_step.svg
+
+Функция потерь на валидации
+
+https://github.com/EugenTrifonov/lab_3/blob/main/graph/epoch_loss_step.svg
 ## B)Экспоненциальное затухание (Exponential Decay)
 Файл train_exp_decay.py
 
