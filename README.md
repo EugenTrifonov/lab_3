@@ -45,7 +45,8 @@
   
 ## B)Экспоненциальное затухание (Exponential Decay)
 Файл train_exp_decay.py
-Были реализованы 4 варианта параметра k для экспоненциального затухания(начальный темп обучения во всех вариантах равен 0.1) :
+
+Были реализованы 4 варианта параметра k для экспоненциального затухания(начальный темп обучения во всех случаях равен 0.1) :
 
 1)k=0.1
 
@@ -56,5 +57,13 @@
 4)k=0.5
 
 ![leg_1](https://user-images.githubusercontent.com/80068414/111866408-461b2200-897e-11eb-9bed-b15c15ccd9a6.png)
+
+Метрика качества на валидации
+
+![acc_3](https://github.com/EugenTrifonov/lab_3/blob/main/graph/epoch_categorical_accuracy_exp.svg)
+
+Функция потерь на валидации 
+
+![loss_3](https://github.com/EugenTrifonov/lab_3/blob/main/graph/epoch_loss_exp.svg)
 
 ## 3.Анализ результатов
