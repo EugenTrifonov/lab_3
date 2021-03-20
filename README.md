@@ -21,11 +21,11 @@
 
 Метрика качества на валидации
 
-https://github.com/EugenTrifonov/lab_3/blob/main/graph/epoch_categorical_accuracy_step.svg
+![acc_2](https://github.com/EugenTrifonov/lab_3/blob/main/graph/epoch_categorical_accuracy_step.svg)
 
 Функция потерь на валидации
 
-https://github.com/EugenTrifonov/lab_3/blob/main/graph/epoch_loss_step.svg
+![loss_2](https://github.com/EugenTrifonov/lab_3/blob/main/graph/epoch_loss_step.svg)
 ## B)Экспоненциальное затухание (Exponential Decay)
 Файл train_exp_decay.py
 
