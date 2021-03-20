@@ -16,7 +16,15 @@
 ## 2.Реализовать и применить в обучении политики изменения темпа обучения, а также определить оптимальные параметры для каждой политики
 ## A)Пошаговое затухание (Step Decay)
 Файл train_step_decay.py
-
+```python
+def step_decay(epoch):
+   initial_lrate = 0.1
+   drop = 0.4
+   epochs_drop = 3.0
+   lrate = initial_lrate * math.pow(drop,  
+           math.floor((1+epoch)/epochs_drop))
+   return lrate
+```
 Были реализованы 3 варианта параметров для пошагового затухания:
  
  1)initial_lrate = 0.1
@@ -45,6 +53,14 @@
   
 ## B)Экспоненциальное затухание (Exponential Decay)
 Файл train_exp_decay.py
+```python
+def exp_decay(epoch):
+   initial_lrate = 0.1
+   k = 0.5
+   lrate = initial_lrate * exp(-k*epoch)
+   return lrate
+lrate = LearningRateScheduler(exp_decay)
+```
 
 Были реализованы 4 варианта параметра k для экспоненциального затухания(начальный темп обучения во всех случаях равен 0.1) :
 
@@ -66,4 +82,5 @@
 
 ![loss_3](https://github.com/EugenTrifonov/lab_3/blob/main/graph/epoch_loss_exp.svg)
 
+Наиболее оптимальным оказался параметр k=0.5 при initial_lrate=0.1
 ## 3.Анализ результатов
